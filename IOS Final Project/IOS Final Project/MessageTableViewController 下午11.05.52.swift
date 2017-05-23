@@ -34,6 +34,14 @@ class MessageTableViewController: UITableViewController {
     var titles = ["朋友1", "朋友2"];
     var subTitles = ["7点开黑", "9点吃夜宵"];
     var images = [imageSource + "/1.jpg", imageSource + "/2.jpg"];
+    var times = ["今天 13:13", "今天 07:35"]
+    var count = ["1", "11"]
+    
+    func hideTableViewExtraCellLine(tableView : UITableView){
+        let view = UIView()
+        tableView.tableFooterView = view
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +51,12 @@ class MessageTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         hideTableViewExtraCellLine(tableView: tableView)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let nib = UINib(nibName: "MessageTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "messageIdentifier")
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,38 +78,34 @@ class MessageTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageIdentifier", for: indexPath)
-        //let rowKey = messages.allKeys[indexPath.row] as! String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageIdentifier", for: indexPath) as! MessageTableViewCell
         
-        //var image : UIImage?
-        //        if let imageURL = URL(string:messages[rowKey] as! String),
-        //            let imageData = try? Data(contentsOf: imageURL){
-        //            //1
-        //            image = UIImage(data:imageData)
-        //            //2
-        //        }
-        
-        // Configure the cell...
-        cell.textLabel?.text = titles[indexPath.row]
-        cell.detailTextLabel?.text = subTitles[indexPath.row]
         let imageSize = CGSize(width: 40, height: 40)
         cell.imageView?.image = UIImage(named: images[indexPath.row])?.reSizeImage(reSize: imageSize)
         cell.imageView!.layer.cornerRadius = 5
         cell.imageView!.layer.masksToBounds = true
         
-        //        if image != nil {
-        //            cell.imageView?.image = image!
-        //        }
+        cell.name?.text = titles[indexPath.row]
+        cell.message?.text = subTitles[indexPath.row]
+        cell.timeLabel?.text = times[indexPath.row]
+        cell.notLabel?.text = count[indexPath.row]
+        cell.notLabel!.layer.cornerRadius = 8
+        cell.notLabel!.layer.masksToBounds = true
         
+        //print(indexPath)
         
         return cell
     }
     
-    
-    func hideTableViewExtraCellLine(tableView : UITableView){
-        let view = UIView()
-        tableView.tableFooterView = view
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: NSIndexPath){
+        print(indexPath)
+        
+        //let conversation = ConversationTableViewController.init();
+        //self.navigationController?.pushViewController(conversation, animated: true)
+        //[self.navigationController pushViewController:conversation animated:YES];
     }
+
+    
     
     /*
      // Override to support conditional editing of the table view.

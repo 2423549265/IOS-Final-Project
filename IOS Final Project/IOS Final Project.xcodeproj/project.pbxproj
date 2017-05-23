@@ -14,7 +14,17 @@
 		5034AB4F1EC729C4002613A1 /* IOS_Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034AB4E1EC729C4002613A1 /* IOS_Final_ProjectTests.swift */; };
 		5034AB5A1EC729C4002613A1 /* IOS_Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034AB591EC729C4002613A1 /* IOS_Final_ProjectUITests.swift */; };
 		5034AB691ECB2F2E002613A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034AB681ECB2F2E002613A1 /* ViewController.swift */; };
-		50D517C81ECC7EC5002886C3 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D517C71ECC7EC5002886C3 /* MessageTableViewController.swift */; };
+		509FF8F21ED1D6C400F7C181 /* FoundSeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FF8F11ED1D6C400F7C181 /* FoundSeachBar.swift */; };
+		509FF8F41ED3035B00F7C181 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FF8F31ED3035B00F7C181 /* UserInformation.swift */; };
+		509FF8FD1ED30A1000F7C181 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FF8FA1ED30A1000F7C181 /* ConversationTableViewController.swift */; };
+		509FF9011ED336E700F7C181 /* MessageTableViewController 下午11.05.52.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FF9001ED336E700F7C181 /* MessageTableViewController 下午11.05.52.swift */; };
+		509FF9031ED3384C00F7C181 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509FF9021ED3384C00F7C181 /* ConversationTableViewCell.xib */; };
+		509FF9051ED3385B00F7C181 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FF9041ED3385B00F7C181 /* ConversationTableViewCell.swift */; };
+		50D517CE1ECDC958002886C3 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D517CC1ECDC958002886C3 /* MessageTableViewCell.swift */; };
+		50D517CF1ECDC958002886C3 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D517CD1ECDC958002886C3 /* MessageTableViewCell.xib */; };
+		50D517DB1ECF1DBF002886C3 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D517DA1ECF1DBF002886C3 /* ItemTableViewController.swift */; };
+		50D517DE1ECF1DD4002886C3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D517DC1ECF1DD4002886C3 /* ItemTableViewCell.swift */; };
+		50D517DF1ECF1DD4002886C3 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D517DD1ECF1DD4002886C3 /* ItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +58,17 @@
 		5034AB591EC729C4002613A1 /* IOS_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		5034AB5B1EC729C4002613A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5034AB681ECB2F2E002613A1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		50D517C71ECC7EC5002886C3 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		509FF8F11ED1D6C400F7C181 /* FoundSeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundSeachBar.swift; sourceTree = "<group>"; };
+		509FF8F31ED3035B00F7C181 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		509FF8FA1ED30A1000F7C181 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
+		509FF9001ED336E700F7C181 /* MessageTableViewController 下午11.05.52.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageTableViewController 下午11.05.52.swift"; sourceTree = "<group>"; };
+		509FF9021ED3384C00F7C181 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationTableViewCell.xib; sourceTree = "<group>"; };
+		509FF9041ED3385B00F7C181 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		50D517CC1ECDC958002886C3 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		50D517CD1ECDC958002886C3 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		50D517DA1ECF1DBF002886C3 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		50D517DC1ECF1DD4002886C3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		50D517DD1ECF1DD4002886C3 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +99,6 @@
 		5034AB2D1EC729C4002613A1 = {
 			isa = PBXGroup;
 			children = (
-				50D517C71ECC7EC5002886C3 /* MessageTableViewController.swift */,
 				5034AB381EC729C4002613A1 /* IOS Final Project */,
 				5034AB4D1EC729C4002613A1 /* IOS Final ProjectTests */,
 				5034AB581EC729C4002613A1 /* IOS Final ProjectUITests */,
@@ -104,8 +123,11 @@
 				5034AB3D1EC729C4002613A1 /* Main.storyboard */,
 				5034AB401EC729C4002613A1 /* Assets.xcassets */,
 				5034AB421EC729C4002613A1 /* LaunchScreen.storyboard */,
-				5034AB451EC729C4002613A1 /* Info.plist */,
 				5034AB681ECB2F2E002613A1 /* ViewController.swift */,
+				5034AB451EC729C4002613A1 /* Info.plist */,
+				509FF8EF1ED1D48A00F7C181 /* 发现界面 */,
+				50D517E01ECF1DDC002886C3 /* 个人界面 */,
+				50D517C91ECC8CD1002886C3 /* 消息 */,
 			);
 			path = "IOS Final Project";
 			sourceTree = "<group>";
@@ -126,6 +148,70 @@
 				5034AB5B1EC729C4002613A1 /* Info.plist */,
 			);
 			path = "IOS Final ProjectUITests";
+			sourceTree = "<group>";
+		};
+		509FF8ED1ED1A21A00F7C181 /* 消息一级界面 */ = {
+			isa = PBXGroup;
+			children = (
+				50D517CD1ECDC958002886C3 /* MessageTableViewCell.xib */,
+				509FF9001ED336E700F7C181 /* MessageTableViewController 下午11.05.52.swift */,
+				50D517CC1ECDC958002886C3 /* MessageTableViewCell.swift */,
+			);
+			name = "消息一级界面";
+			sourceTree = "<group>";
+		};
+		509FF8EE1ED1A22800F7C181 /* 对话界面 */ = {
+			isa = PBXGroup;
+			children = (
+				509FF9041ED3385B00F7C181 /* ConversationTableViewCell.swift */,
+				509FF9021ED3384C00F7C181 /* ConversationTableViewCell.xib */,
+				509FF8FA1ED30A1000F7C181 /* ConversationTableViewController.swift */,
+			);
+			name = "对话界面";
+			sourceTree = "<group>";
+		};
+		509FF8EF1ED1D48A00F7C181 /* 发现界面 */ = {
+			isa = PBXGroup;
+			children = (
+				509FF8F01ED1D60100F7C181 /* 搜索框 */,
+			);
+			name = "发现界面";
+			sourceTree = "<group>";
+		};
+		509FF8F01ED1D60100F7C181 /* 搜索框 */ = {
+			isa = PBXGroup;
+			children = (
+				509FF8F11ED1D6C400F7C181 /* FoundSeachBar.swift */,
+			);
+			name = "搜索框";
+			sourceTree = "<group>";
+		};
+		509FF8F51ED3038F00F7C181 /* 个人一级界面 */ = {
+			isa = PBXGroup;
+			children = (
+				50D517DA1ECF1DBF002886C3 /* ItemTableViewController.swift */,
+				50D517DD1ECF1DD4002886C3 /* ItemTableViewCell.xib */,
+				50D517DC1ECF1DD4002886C3 /* ItemTableViewCell.swift */,
+			);
+			name = "个人一级界面";
+			sourceTree = "<group>";
+		};
+		50D517C91ECC8CD1002886C3 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				509FF8EE1ED1A22800F7C181 /* 对话界面 */,
+				509FF8ED1ED1A21A00F7C181 /* 消息一级界面 */,
+			);
+			name = "消息";
+			sourceTree = "<group>";
+		};
+		50D517E01ECF1DDC002886C3 /* 个人界面 */ = {
+			isa = PBXGroup;
+			children = (
+				509FF8F31ED3035B00F7C181 /* UserInformation.swift */,
+				509FF8F51ED3038F00F7C181 /* 个人一级界面 */,
+			);
+			name = "个人界面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +321,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509FF9031ED3384C00F7C181 /* ConversationTableViewCell.xib in Resources */,
 				5034AB441EC729C4002613A1 /* LaunchScreen.storyboard in Resources */,
+				50D517CF1ECDC958002886C3 /* MessageTableViewCell.xib in Resources */,
 				5034AB411EC729C4002613A1 /* Assets.xcassets in Resources */,
+				50D517DF1ECF1DD4002886C3 /* ItemTableViewCell.xib in Resources */,
 				5034AB3F1EC729C4002613A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D517DB1ECF1DBF002886C3 /* ItemTableViewController.swift in Sources */,
+				509FF9011ED336E700F7C181 /* MessageTableViewController 下午11.05.52.swift in Sources */,
 				5034AB691ECB2F2E002613A1 /* ViewController.swift in Sources */,
-				50D517C81ECC7EC5002886C3 /* MessageTableViewController.swift in Sources */,
+				509FF8FD1ED30A1000F7C181 /* ConversationTableViewController.swift in Sources */,
+				509FF9051ED3385B00F7C181 /* ConversationTableViewCell.swift in Sources */,
+				509FF8F21ED1D6C400F7C181 /* FoundSeachBar.swift in Sources */,
+				509FF8F41ED3035B00F7C181 /* UserInformation.swift in Sources */,
+				50D517CE1ECDC958002886C3 /* MessageTableViewCell.swift in Sources */,
+				50D517DE1ECF1DD4002886C3 /* ItemTableViewCell.swift in Sources */,
 				5034AB3A1EC729C4002613A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
