@@ -9,9 +9,10 @@
 import UIKit
 import CoreImage
 
-let imageSource_person = "/Users/albert/Documents/大学课程/大三下/移动互联/IOS Final Project/个人界面"
+let imageSource_person = "/Users/apple/Downloads/IOS Final Project 2/个人界面"
 
 class ItemTableViewController: UITableViewController {
+    
     
     var profiles = [imageSource_person + "/1.jpg", imageSource_person + "/1.jpg"]
     var names = ["李东岳", "李明亮"]
@@ -38,6 +39,8 @@ class ItemTableViewController: UITableViewController {
         
         let nib = UINib(nibName: "ItemTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "itemIdentifier")
+        
+      
 
         
     }
@@ -70,12 +73,12 @@ class ItemTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemIdentifier", for: indexPath) as! ItemTableViewCell
 
         // Configure the cell...
-        cell.profile_photo?.image = UIImage(named: profiles[indexPath.row])
+        cell.profile_photo?.image = #imageLiteral(resourceName: "展示1")
         cell.profile_photo!.layer.cornerRadius = 15
         cell.profile_photo!.layer.masksToBounds = true
-        cell.photo1?.image = UIImage(named: photo1[indexPath.row])
-        cell.photo2?.image = UIImage(named: photo2[indexPath.row])
-        cell.photo3?.image = UIImage(named: photo3[indexPath.row])
+        cell.photo1?.image = #imageLiteral(resourceName: "展示2")
+        cell.photo2?.image = #imageLiteral(resourceName: "展示3")
+        cell.photo3?.image = #imageLiteral(resourceName: "展示4")
         
         cell.name?.text = names[indexPath.row]
         cell.price?.text = price[indexPath.row]
@@ -120,7 +123,7 @@ class ItemTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -128,6 +131,6 @@ class ItemTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

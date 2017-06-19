@@ -11,7 +11,7 @@ import CoreImage
 
 //let dataSourceURL = URL(string:"http://www.raywenderlich.com/downloads/ClassicPhotosDictionary.plist")
 
-let imageSource = "/Users/albert/Documents/大学课程/大三下/移动互联/IOS Final Project/消息头像"
+
 
 extension UIImage {
     /**
@@ -31,11 +31,23 @@ extension UIImage {
 class MessageTableViewController: UITableViewController {
     
     //lazy var messages = NSDictionary(contentsOf:dataSourceURL!)!
-    var titles = ["朋友1", "朋友2"];
-    var subTitles = ["7点开黑", "9点吃夜宵"];
-    var images = [imageSource + "/1.jpg", imageSource + "/2.jpg"];
-    var times = ["今天 13:13", "今天 07:35"]
-    var count = ["1", "11"]
+    //var titles = ["朋友1", "朋友2"];
+    //var subTitles = ["7点开黑", "9点吃夜宵"];
+    //var images = [imageSource + "/1.jpg", imageSource + "/2.jpg"];
+    //var times = ["今天 13:13", "今天 07:35"]
+    //var count = ["1", "11"]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //print(Login)
+        if(!Login){
+            performSegue(withIdentifier: "Login", sender: nil)
+        }
+        else{
+            self.tableView.reloadData()
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            appdelegate.messageNavigation.updateUnreadMessages()
+        }
+    }
     
     func hideTableViewExtraCellLine(tableView : UITableView){
         let view = UIView()
@@ -54,7 +66,8 @@ class MessageTableViewController: UITableViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.messageController = self
         let nib = UINib(nibName: "MessageTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "messageIdentifier")
     }
@@ -73,7 +86,8 @@ class MessageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return titles.count
+        //print(conversations.count)
+        return conversations.count
     }
     
     
@@ -81,31 +95,73 @@ class MessageTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageIdentifier", for: indexPath) as! MessageTableViewCell
         
         let imageSize = CGSize(width: 40, height: 40)
-        cell.imageView?.image = UIImage(named: images[indexPath.row])?.reSizeImage(reSize: imageSize)
+        print(conversations[indexPath.row].theOtherPhoto)
+        
+        
+        if(conversations[indexPath.row].theOtherID == "110"){
+            cell.imageView?.image = #imageLiteral(resourceName: "系统头像").reSizeImage(reSize: imageSize)
+        }
+        else{
+            cell.imageView?.image = UIImage(named: conversations[indexPath.row].theOtherPhoto)?.reSizeImage(reSize: imageSize)
+        }
         cell.imageView!.layer.cornerRadius = 5
         cell.imageView!.layer.masksToBounds = true
         
-        cell.name?.text = titles[indexPath.row]
-        cell.message?.text = subTitles[indexPath.row]
-        cell.timeLabel?.text = times[indexPath.row]
-        cell.notLabel?.text = count[indexPath.row]
-        cell.notLabel!.layer.cornerRadius = 8
-        cell.notLabel!.layer.masksToBounds = true
+        cell.name?.text = conversations[indexPath.row].theOtherName
+        cell.message?.text = conversations[indexPath.row].lastSentence
+        
+        let date = NSDate()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy MM dd HH mm"
+        let current = timeFormatter.string(from: date as Date) as String
+        
+        let lastTime = (conversations[indexPath.row].times[conversations[indexPath.row].times.count - 1]).components(separatedBy: " ")
+        let curTime = current.components(separatedBy: " ")
+        
+        print(lastTime)
+        
+        if(curTime[0] != lastTime[0] || curTime[1] != lastTime[1] || curTime[2] != lastTime[2]){
+            cell.timeLabel?.text = lastTime[0]+"/"+lastTime[1]+"/"+lastTime[2]
+        }
+        else{
+            cell.timeLabel?.text = lastTime[3]+":"+lastTime[4]
+        }
+        
+        if(conversations[indexPath.row].unReadMessagesNum == 0){
+            //  cell.notLabel!.layer.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            cell.notLabel.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            cell.notLabel.backgroundColor = UIColor.white
+            cell.notLabel?.text = ""
+        }
+        else{
+            cell.notLabel?.text = String(conversations[indexPath.row].unReadMessagesNum)
+            cell.notLabel.backgroundColor = UIColor.red
+            print(conversations[indexPath.row].unReadMessagesNum)
+            cell.notLabel!.layer.cornerRadius = 8
+            cell.notLabel!.layer.masksToBounds = true
+        }
         
         //print(indexPath)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: NSIndexPath){
-        print(indexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        //print(indexPath)
+        currentConversation = indexPath.row
+        print("currentConversation=", currentConversation)
         
-        //let conversation = ConversationTableViewController.init();
-        //self.navigationController?.pushViewController(conversation, animated: true)
-        //[self.navigationController pushViewController:conversation animated:YES];
+        self.hidesBottomBarWhenPushed = true
+        
+        let itemString = conversations[indexPath.row].theOtherID
+        self.performSegue(withIdentifier: "ShowDetailConversation", sender: itemString)
+        
+        self.hidesBottomBarWhenPushed = false
     }
 
-    
+    func reload(){
+        self.tableView.reloadData()
+    }
     
     /*
      // Override to support conditional editing of the table view.
